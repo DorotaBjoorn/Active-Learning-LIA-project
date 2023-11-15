@@ -1,6 +1,4 @@
-data_folder:'/mnt/c/Yose/Data/vnn_data/active_learning/'
-
-The VNN forum dataset has been:
+Forum dataset has been:
 * cleand from url
 * chunked into max token lengt 256 using tokenizer = BertTokenizer.from_pretrained("bert-base-uncased")
 * embeddings were calculated using model = SentenceTransformer('all-MiniLM-L6-v2')
@@ -23,39 +21,3 @@ Active learning is used to annotate data. Inital annotated data is 200 datapoint
 Basic ActiveLearner is initialized with estimators: LogisticRegression or RandomForrest and uncertaquery strategy as query strategy.
 Most uncertain points are queried and new accuracy score calculated a predefined number of times.
 Query results are saved together with plots and model.
-
-
-
-
-
----
-Active Learning Literature Survey 2010\
-https://burrsettles.com/pub/settles.activelearning.pdf
----
-Active training good basic explanation with LogReg and simple code, no module used for active learning\
-https://www.geeksforgeeks.org/ml-active-learning/
----
-Good overview of Avtive Learning for NLP with refrences within to AL tools and example for text classification with SVM \
-https://medium.com/@farnazgh73/ultimate-guide-for-active-learning-main-approaches-3cf53ce207f0
-    - data manually removed from pool and added to train efter labeling
----
-activeml module
-https://pypi.org/project/scikit-activeml/ - bild on scikit learn
-* easier way to handle non-labeled data
----
-ModAL module for AL tutorial \
-https://modal-python.readthedocs.io/en/latest/
-    - build on sklearn
-
-* example interactive labeling is requested:
-    - https://modal-python.readthedocs.io/en/latest/content/examples/interactive_labeling.html
-    - modified in active_learning_tutorial.ipynb  
-* poolbased sampling:
-    - https://modal-python.readthedocs.io/en/latest/content/examples/pool-based_sampling.html
-   
-* example of poolbased batched data for labeling:
-    - https://modal-python.readthedocs.io/en/latest/content/examples/ranked_batch_mode.html
----
-ActiveLab module from CleanLab for AL \
-https://cleanlab.ai/blog/active-learning/
-* best results
